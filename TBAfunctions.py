@@ -1,18 +1,20 @@
-#tbafunc.py
 import time
 import os
 import sys
+import keyboard
 
 str = ""
 class textManip:
     def clearLine():
-        print("\033[A\033[A") 
+        sys.stdout.write('\x1b[1A')
+        sys.stdout.write('\x1b[2K')
 
     def clearScreen():
         os.system('cls')
 
-    def threeDot():
-        textManip.clearLine()
+    def threeDot(erase):
+        if erase:
+            textManip.clearLine()
         print(".")
         time.sleep(1)
         textManip.clearLine()
@@ -27,3 +29,6 @@ class textManip:
             time.sleep(.03 * slow)
             sys.stdout.write(char)
             sys.stdout.flush()
+            if keyboard.is_pressed('q'):
+                slow = .001
+        print()
