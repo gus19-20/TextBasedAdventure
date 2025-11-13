@@ -13,6 +13,9 @@ class object:
     
     def IsEquippable(self):
         return self.equippable
+    
+    def PrintDeets(self):
+        print(f"{self.GetName()}\n\n{self.GetDesc()}")
 
 class tool(object):
     def __init__(self, name, description, equippable, damage, type):
@@ -32,7 +35,11 @@ class tool(object):
     def GetDamage(self):
         return self.damage
     
+    def PrintDeets(self):
+        print(f"{self.GetName()}\n\n{self.GetDamage()}\n\n{self.GetToolType()}\n\n{self.GetDesc()}")
+    
 class keyitem(object):
     def __init__(self, name, description, equippable):
         super().__init__(name, description, equippable)
-        
+
+

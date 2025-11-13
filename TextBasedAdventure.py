@@ -10,10 +10,7 @@ import Rooms
 
 
 def main():
-    newTool = Objects.tool("Sammy", "Is a man", True, 1000000, "Man")
-    textManip.clearScreen()
-    room1 = Rooms.room(Rooms.event("WibblyWobbly"))   
-    textManip.TWprint(room1.EventActivate(), 1)
+    print()
 
 if __name__ == "__main__":
     main() 
